@@ -1,0 +1,13 @@
+#ifndef TASK_MANAGER_CLI_RELOAD_COMMAND_H
+#define TASK_MANAGER_CLI_RELOAD_COMMAND_H
+
+#include <task_manager.h>
+#include <commands/i_command.h>
+
+class reload_command : public i_command
+{
+public:
+    void execute( task_manager &tm ) override { tm.reload( ); }
+};
+
+#endif //TASK_MANAGER_CLI_RELOAD_COMMAND_H
