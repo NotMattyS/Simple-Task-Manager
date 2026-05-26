@@ -83,7 +83,7 @@ MSVC 2022+).
 Clone the repository:
 ```bash
 git clone https://github.com/NotMattyS/Simple-Task-Manager.git
-cd Simple-Task-Manager-master
+cd Simple-Task-Manager
 ```
 
 Generate build files using CMake:
