@@ -218,7 +218,7 @@ void task_manager::display_tasks( ) const
     {
         if ( i % 4 == 0 ) std::cout << "\n";
         const task &t = m_v_tasks[ i ];
-        std::cout << std::format( "{}- {} - {}  |   ", t.get_id( ), t.get_name( ), t.is_completed( ) ? "completed." : "not completed." );
+        std::cout << std::format( "{}- {} - {}  |   ", t.get_id( ), t.get_name( ), t.is_completed( ) ? "completed" : "pending" );
     }
 
     std::cout << "\n";
