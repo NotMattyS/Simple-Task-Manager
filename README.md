@@ -78,4 +78,36 @@ Review waves
 The project uses CMake as its build system and requires a compiler with full C++20 support (e.g., GCC 13+, Clang 15+, or
 MSVC 2022+).
 
+## Build Instructions
+
+Clone the repository:
+```bash
+git clone https://github.com/NotMattyS/Simple-Task-Manager.git
+cd Simple-Task-Manager-master
+```
+
+Generate build files using CMake:
+```bash
+cmake -B build
+```
+
+Compile the project:
+```bash
+cmake --build build
+```
+
+Run the executable:
+```bash
+./build/task_manager_cli
+```
+
+> On Windows with MSVC, the executable may be located inside:
+> `build/Debug/` or `build/Release/`
+
+## Notes
+For GCC and Clang builds, the executable is linked statically using:
+- `-static`
+- `-static-libgcc`
+- `-static-libstdc++`
+
 Developed natively in JetBrains CLion.
