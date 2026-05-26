@@ -412,7 +412,7 @@ void task_manager::check_tasks( ) const
 
     if ( total_tasks == 0 )
     {
-        std::cout << "There is no task to analyze.\nAdd one with the command `add`.\n";
+        std::cout << "There is no task to analyze. Add one with the command `add`.\n";
         return;
     }
 
