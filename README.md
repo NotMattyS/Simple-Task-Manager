@@ -1,3 +1,16 @@
+<div align="center">
+<a href = "https://opensource.org/licenses/MIT"> <img src = "https://img.shields.io/badge/license-MIT-green?style=flat-square" alt = "MIT License"></a>
+<img src = "https://img.shields.io/badge/C%2B%2B-20-blue?style=flat-square&logo=c%2B%2B" alt = "C++20">
+<img src = "https://img.shields.io/badge/CMake-Build_System-darkblue?style=flat-square&logo=cmake" alt = "CMake">
+<img src = "https://img.shields.io/badge/GCC-13%2B-red?style=flat-square&logo=gnu" alt = "GCC 13+">
+<img src = "https://img.shields.io/badge/Clang-15%2B-informational?style=flat-square&logo=llvm" alt = "Clang 15+">
+<img src = "https://img.shields.io/badge/MSVC-2022-purple?style=flat-square&logo=visualstudio" alt = "MSVC 2022">
+<img src = "https://img.shields.io/badge/storage-filesystem-success?style=flat-square&logo=files" alt = "Filesystem Storage">
+<img src = "https://img.shields.io/badge/platform-linux%20%7C%20windows-lightgrey?style=flat-square" alt = "Platforms">
+<img src = "https://img.shields.io/badge/status-active-success?style=flat-square" alt = "Project Status">
+</div>
+<hr>
+
 # Simple CLI Task Manager
 
 A robust, object-oriented CLI task manager built from scratch using modern **C++20** standards.
