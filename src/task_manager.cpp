@@ -247,7 +247,7 @@ void task_manager::add_task( const std::string &name, const std::string &descrip
     try
     {
         m_v_tasks.emplace_back( name, description, m_i_next_id );
-        std::cout << std::format( "Task has been created successfully with id `{}`.\n", m_i_next_id - 1 );
+        std::cout << std::format( "Task has been created successfully with id `{}`.\n", m_i_next_id );
         m_i_next_id++;
     }
     catch ( const std::invalid_argument &e )
