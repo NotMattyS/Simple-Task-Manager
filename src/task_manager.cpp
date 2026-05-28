@@ -212,13 +212,18 @@ void task_manager::print_file_name( ) const { std::cout << std::format( "{}\n", 
 
 void task_manager::display_tasks( ) const
 {
+    constexpr auto RESET   = "\033[0m";
+    constexpr auto BLUE    = "\033[94m";
+    constexpr auto GREEN   = "\033[32m";
+    constexpr auto YELLOW  = "\033[33m";
+
     if ( notify_if_empty( ) ) return;
 
     for ( size_t i = 0; i < m_v_tasks.size( ); i++ )
     {
         if ( i % 4 == 0 ) std::cout << "\n";
         const task &t = m_v_tasks[ i ];
-        std::cout << std::format( "{}- {} - {}  |   ", t.get_id( ), t.get_name( ), t.is_completed( ) ? "completed" : "pending" );
+        std::cout << std::format( "{}{}{}- {} - {}{}{}  |   ",BLUE, t.get_id( ), RESET, t.get_name( ),t.is_completed( ) ? GREEN : YELLOW, t.is_completed( ) ? "completed" : "pending", RESET);
     }
 
     std::cout << "\n";
