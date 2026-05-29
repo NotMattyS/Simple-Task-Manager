@@ -190,6 +190,11 @@ command parse_cli_arguments( const arguments &args )
         return std::make_unique< mark_as_uncompleted_command >( id.value( ) );
     }
 
+    if ( action == "clear" )
+    {
+        notify_if_exceeds(args, 1u);
+        return std::make_unique<clear_completed_command>();
+    }
 
     notify( "unknown command" );
     return nullptr;

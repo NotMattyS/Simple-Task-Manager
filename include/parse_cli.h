@@ -30,6 +30,7 @@
 #include <commands/check_task_command.h>
 #include <commands/mark_as_completed_command.h>
 #include <commands/mark_as_uncompleted_command.h>
+#include <commands/clear_completed_command.h>
 
 using command = std::unique_ptr< i_command >;
 using arguments = std::vector< std::string >;
