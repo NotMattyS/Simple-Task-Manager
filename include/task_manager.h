@@ -37,6 +37,8 @@ public:
     void mark_task_as_uncompleted( int id );
     void check_tasks( ) const;
 
+    void clear_completed_tasks();
+
 private:
     std::vector< task > m_v_tasks;
     int m_i_next_id = 0;

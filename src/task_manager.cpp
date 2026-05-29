@@ -229,6 +229,20 @@ void task_manager::display_tasks( ) const
     std::cout << "\n";
 }
 
+void task_manager::clear_completed_tasks( )
+{
+    if ( notify_if_empty( ) ) return;
+
+    const size_t removed = std::erase_if( m_v_tasks, [](const task &t ){ return t.is_completed( ); } );
+
+    if ( removed == 0 )
+    {
+        std::cout << "There are no completed tasks to clear.\n";
+        return;
+    }
+    std::cout << std::format( "{} completed task(s) cleared successfully.\n", removed );
+}
+
 void task_manager::see_task( int id ) const
 {
     if ( notify_if_empty( ) ) return;
