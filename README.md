@@ -1,4 +1,4 @@
-<div align="center">
+<div align = "center">
 <a href = "https://opensource.org/licenses/MIT"> <img src = "https://img.shields.io/badge/license-MIT-green?style=flat-square" alt = "MIT License"></a>
 <img src = "https://img.shields.io/badge/C%2B%2B-20-blue?style=flat-square&logo=c%2B%2B" alt = "C++20">
 <img src = "https://img.shields.io/badge/CMake-Build_System-darkblue?style=flat-square&logo=cmake" alt = "CMake">
@@ -60,6 +60,7 @@ file                            # Print current working file name.
 # Task Operations
 display                         # Render all tasks in a 4-column matrix.
 check                           # Compute metrics (completion rate, pending count).
+clear                           # Remove completed tasks from the registry.
 see <id>                        # Inspect a specific task's metadata.
 add <name>; <description>       # Create a new task (supports spaces).
 delete <id>                     # Erase a task utilizing std::erase_if (C++20).

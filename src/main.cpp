@@ -75,6 +75,7 @@ void print_commands( )
     std::cout << "display                       -- Render all tasks in a 4-column matrix.\n";
     std::cout << "check                         -- Compute metrics (completion rate, pending count).\n";
     std::cout << "see <id>                      -- Inspect a specific task's metadata.\n";
+    std::cout << "clear                         -- Remove completed tasks from the registry.";
     std::cout << "add <name>; <description>     -- Create a new task (supports spaces).\n";
     std::cout << "delete <id>                   -- Erase a task.\n";
     std::cout << "edit <field>; <id>; <new>     -- Change the specific field of a task to a new value.\n";

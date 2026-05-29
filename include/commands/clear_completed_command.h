@@ -4,9 +4,7 @@
 #include <task_manager.h>
 #include <commands/i_command.h>
 
-class task_manager;
-
-class clear_completed_command : public i_command 
+class clear_completed_command : public i_command
 {
     public:
         explicit clear_completed_command( ) = default;

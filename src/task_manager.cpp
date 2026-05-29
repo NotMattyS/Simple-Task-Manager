@@ -4,7 +4,7 @@ bool task_manager::notify_if_empty( ) const
 {
     if ( m_v_tasks.empty( ) )
     {
-        std::cout << "There is no task available. Add a new task with the command `add`.\n";
+        std::cout << "There are no tasks available. Add a new task with the command `add`.\n";
         return true;
     }
 
