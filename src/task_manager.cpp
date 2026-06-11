@@ -370,7 +370,7 @@ void task_manager::copy_task( int id )
     try
     {
         m_v_tasks.emplace_back( *original, m_i_next_id );
-        std::cout << std::format( "Task has been created successfully with id `{}`.\n", m_i_next_id - 1 );
+        std::cout << std::format( "Task has been created successfully with id `{}`.\n", m_i_next_id );
         m_i_next_id++;
     }
     catch ( const std::invalid_argument &e )
