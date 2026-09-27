@@ -22,6 +22,8 @@ public:
     void save( );
     void reload( );
 
+    void export_to_json( const std::string &path ) const;
+
     void print_file_name( ) const;
 
     void display_tasks( ) const;

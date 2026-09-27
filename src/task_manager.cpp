@@ -1,5 +1,33 @@
 #include <task_manager.h>
 
+namespace
+{
+    std::string json_escape( const std::string &str )
+    {
+        std::string out;
+        out.reserve( str.size( ) );
+
+        for ( char c: str )
+        {
+            switch ( c )
+            {
+                case '"':  out += "\\\""; break;
+                case '\\': out += "\\\\"; break;
+                case '\n': out += "\\n";  break;
+                case '\r': out += "\\r";  break;
+                case '\t': out += "\\t";  break;
+                default:
+                    if ( static_cast< unsigned char >( c ) < 0x20 )
+                        out += std::format( "\\u{:04x}", static_cast< unsigned char >( c ) );
+                    else
+                        out += c;
+            }
+        }
+
+        return out;
+    }
+}
+
 bool task_manager::notify_if_empty( ) const
 {
     if ( m_v_tasks.empty( ) )
@@ -206,6 +234,43 @@ void task_manager::reload( )
 {
     std::cout << "Reloading current file...\n";
     load_from_file( m_str_path );
+}
+
+void task_manager::export_to_json( const std::string &path ) const
+{
+    if ( !path.ends_with( ".json" ) )
+    {
+        std::cerr << std::format( "Invalid path to export: {}\n", path );
+        return;
+    }
+
+    std::ofstream file( path );
+
+    if ( !file.is_open( ) )
+    {
+        std::cerr << std::format( "Couldn't open file for writing: {}\n", path );
+        return;
+    }
+
+    file << std::format( "{{\n  \"last_id\": {},\n  \"tasks\": [\n", m_i_next_id );
+
+    for ( size_t i = 0; i < m_v_tasks.size( ); i++ )
+    {
+        const task &t = m_v_tasks[ i ];
+
+        file << "    {\n";
+        file << std::format( "      \"id\": {},\n", t.get_id( ) );
+        file << std::format( "      \"name\": \"{}\",\n", json_escape( t.get_name( ) ) );
+        file << std::format( "      \"description\": \"{}\",\n", json_escape( t.get_description( ) ) );
+        file << std::format( "      \"completed\": {}\n", t.is_completed( ) ? "true" : "false" );
+        file << ( i + 1 < m_v_tasks.size( ) ? "    },\n" : "    }\n" );
+    }
+
+    file << "  ]\n}\n";
+
+    file.close( );
+
+    std::cout << std::format( "Tasks exported successfully to `{}`.\n", path );
 }
 
 void task_manager::print_file_name( ) const { std::cout << std::format( "{}\n", m_str_path ); }

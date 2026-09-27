@@ -15,6 +15,8 @@
 #include <commands/save_command.h>
 #include <commands/save_to_file_command.h>
 
+#include <commands/export_to_json_command.h>
+
 #include <commands/print_file_command.h>
 
 #include <commands/display_tasks_command.h>

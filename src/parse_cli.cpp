@@ -71,6 +71,14 @@ command parse_cli_arguments( const arguments &args )
         return std::make_unique< reload_command >( );
     }
 
+    if ( action == "export" )
+    {
+        if ( notify_if_missing( args, 2u ) ) return nullptr;
+        notify_if_exceeds( args, 2u );
+
+        return std::make_unique< export_to_json_command >( args[ 1 ] );
+    }
+
     if ( action == "file" )
     {
         notify_if_exceeds( args, 1u );
