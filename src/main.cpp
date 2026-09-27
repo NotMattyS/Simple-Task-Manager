@@ -71,12 +71,13 @@ void print_commands( )
     std::cout << "reload                        -- Reload the active file descriptor.\n";
     std::cout << "save <path>                   -- Save changes to the specified path.\n";
     std::cout << "save                          -- Save changes to the current file.\n";
+    std::cout << "export <path>                 -- Export all tasks to a JSON file.\n";
     std::cout << "file                          -- Print current working file name.\n\n";
     std::cout << "display                       -- Render all tasks in a 4-column matrix.\n";
     std::cout << "check                         -- Compute metrics (completion rate, pending count).\n";
     std::cout << "see <id>                      -- Inspect a specific task's metadata.\n";
     std::cout << "clear                         -- Remove completed tasks from the registry.\n";
-    std::cout << "add <name>; <description>     -- Create a new task (supports spaces).\n";
+    std::cout << "add <n>; <description>     -- Create a new task (supports spaces).\n";
     std::cout << "delete <id>                   -- Erase a task.\n";
     std::cout << "edit <field>; <id>; <new>     -- Change the specific field of a task to a new value.\n";
     std::cout << "copy <id>                     -- Clone an existing task with a new auto-incremented ID.\n";

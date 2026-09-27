@@ -6,3 +6,4 @@
 *.tsk
 *.tsk.backup
 *.tsk.temp
+*.json
